@@ -1,0 +1,21 @@
+/*
+############
+COLOR SCHEME
+############
+DARK : #1C1D21
+MID : #31353D
+BLUE : #445878
+AQUA : #92CDCF
+LIGHT : #EEEFF7
+*/
+@font-face {
+  font-family: "BebasNeue";
+  src: url('../fonts/BebasNeue Regular.otf') format('opentype');
+}
+  h1, h2, h3, h4, h5, h6 {
+  font-family: "BebasNeue","Verdana", "Arial", sans-serif;
+  font-weight: normal; 
+}
+hr {
+  margin: 7px 0 7px 0;
+}

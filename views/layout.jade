@@ -1,0 +1,32 @@
+doctype html
+html(ng-app)
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/base.css')
+    link(rel='stylesheet', href='/stylesheets/layout.css')
+    link(rel='stylesheet', href='/stylesheets/skeleton.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='shortcut icon', href='/images/favicon.ico')
+  body
+    div(class='container')
+      div(class='sixteen columns')
+        h1(style='margin-top:40px;')
+          a(href='http://localhost:3000/', style='text-decoration:none;') 
+            | The Work of Lombe
+      hr(class='nav')
+      div(class='one-third column')
+        h3(class='remove-bottom', style='text-align:center;')
+          a(href='/musings/', style='text-decoration:none')
+            | Musings
+      div(class='one-third column')
+        h3(class='remove-bottom', style='text-align:center;')
+          a(href='/projects/', style='text-decoration:none')
+            | Projects
+      div(class='one-third column')
+        h3(class='remove-bottom', style='text-align:center;')
+          a(href='/contact/', style='text-decoration:none')
+            | Contact
+      hr(class='nav add-bottom')
+      block content
+    script(src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.9/angular.min.js")
+    script(src="/javascript/script.js")
