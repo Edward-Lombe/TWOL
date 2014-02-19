@@ -54,7 +54,7 @@ function projectControl($scope,$http){
 
   $scope.add = function(){
     if(hasData($scope.newProject)){
-      $http.post('api/add/project',$scope.newProject)
+      $http.post('/api/add/project',$scope.newProject)
       .success(function(data){
         $scope.newProject = {};
         $scope.projects = data;
@@ -64,7 +64,7 @@ function projectControl($scope,$http){
 
   $scope.delete = function(id){
     if (window.confirm('Are you sure?')){
-      $http.delete('api/delete/project/' + id).
+      $http.delete('/api/delete/project/' + id).
         success(function(data){
           $scope.projects = data;
         });
