@@ -1,0 +1,64 @@
+doctype html
+html(ng-app)
+  head
+    title= 'Update'
+    link(rel='stylesheet', href='/stylesheets/base.css')
+    link(rel='stylesheet', href='/stylesheets/layout.css')
+    link(rel='stylesheet', href='/stylesheets/skeleton.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='shortcut icon', href='/images/favicon.ico')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0, user-scalable=no')
+  body
+    div(class='container')
+      div(class='sixteen columns', ng-controller='projectControl')
+        br
+        h1
+          | Add project
+        hr
+        label
+          | Title
+        input(type='text', ng-model='newProject.title')
+
+        label
+          | Date
+        input(type='text', ng-model='newProject.date')
+
+        label 
+          | Content
+        textarea(ng-model='newProject.content')
+
+        button(ng-click='add()')
+          | Add project
+        table
+          thead
+            td
+              | Title
+            td
+              | Date
+            td
+              | Content
+          tbody
+            tr(ng-repeat='project in projects')
+              td
+                button(ng-click='delete(project._id)', class='remove-bottom')= 'Remove'
+                | {{project.title}}
+              td
+                | {{project.date}}
+              td
+                | {{project.content}}
+      div(class='sixteen columns')
+        br
+        h1
+          | Add Article
+        hr
+        label
+          | Name
+        input(type='text')
+        label
+          | Date
+        input(type='text')
+        label 
+          | Content
+        textarea
+    script(src="/javascript/libraries/angular.min.js")
+    script(src="/javascript/script.js")

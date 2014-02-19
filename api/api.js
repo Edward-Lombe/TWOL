@@ -1,50 +1,79 @@
 var mongoose = require('mongoose');
 var Models = require('.././models/list.js')(mongoose);
 var List = Models.List;
+var Project = Models.Project;
 module.exports = function(app){
-  app.get('/api/list',function(req,res){
-    List.find(function(err,items){
+
+  app.post('/api/add/project',function(req,res){
+    Project.create({
+      title: req.body.title,
+      content: req.body.content,
+      date: req.body.date
+    }, function(err,project){
       if(err){
         res.send(err);
       }
-      res.json(items);
-    });
-  });
-
-  app.post('/api/add',function(req,res){
-    List.create({
-      text:req.body.text
-    }, function(err, list) {
-      if (err){
-        res.send(err);
-      }
-      // get and return all the todos after you create another
-      List.find(function(err, items) {
-        if (err){
+      Project.find(function(err,projects){
+        if(err){
           res.send(err);
         }
-        res.json(items);
+        
+        res.json(projects);
       });
     });
   });
 
-  app.delete('/api/todos/:todo_id', function(req, res) {
-    List.remove({
-      _id : req.params.todo_id
-    }, function(err, todo) {
-      if (err){
+  app.get('/api/get/project',function(req,res){
+    Project.find(function(err, projects){
+      if(err){
         res.send(err);
       }
-      // get and return all the todos after you create another
-      List.find(function(err, items) {
-        if (err){
-          res.send(err);
-        }
-        res.json(items);
-      });
+      res.json(projects);
     });
   });
 
+  app.delete('/api/delete/project/:project_id', function(req, res) {
+    Project.remove({
+      _id : req.params.project_id
+    }, function(err, project) {
+      if (err){
+        res.send(err);
+      }
+      List.find(function(err, projects) {
+        if (err){
+          res.send(err);
+        }
+        res.json(projects);
+      });
+    });
+  });
 
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   

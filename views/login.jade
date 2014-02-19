@@ -1,0 +1,23 @@
+doctype html
+html(ng-app)
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/base.css')
+    link(rel='stylesheet', href='/stylesheets/layout.css')
+    link(rel='stylesheet', href='/stylesheets/skeleton.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='shortcut icon', href='/images/favicon.ico')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0, user-scalable=no')
+  body
+    div(class='container')
+      br
+      div(class='four columns offset-by-six')
+        label
+          | User Name
+        input(type='text')
+        label
+          | Password
+        input(type='password')
+        input(type='button', value='Login')
+    script(src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.9/angular.min.js")
+    script(src="/javascript/script.js")

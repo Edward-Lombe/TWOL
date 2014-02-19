@@ -3,10 +3,10 @@ module.exports = function(mongoose){
     List : mongoose.model('List',{
       text: String
     }),
-    Article : mongoose.model('Article',{
+    Project : mongoose.model('Project',{
       title: String,
-      body: String,
-      time: Date
+      content: String,
+      date: Date
     })
   };
   return Models;

@@ -23,3 +23,9 @@ exports.contact = function(req,res){
     title: 'The Work of Lombe'
   });
 };
+exports.login = function(req,res){
+  res.render('login');
+};
+exports.update = function(req,res){
+  res.render('update');
+};

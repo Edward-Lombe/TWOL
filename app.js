@@ -7,7 +7,8 @@ var routes = require('./routes');
 var http = require('http');
 var path = require('path');
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/mytestapp');
+var bcrypt = require('bcrypt');
+mongoose.connect('mongodb://localhost/twol');
 var app = express();
 
 // all environments
@@ -33,6 +34,8 @@ app.get('/', routes.index);
 app.get('/musings', routes.musings);
 app.get('/projects', routes.projects);
 app.get('/contact', routes.contact);
+app.get('/login', routes.login);
+app.get('/update', routes.update);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
